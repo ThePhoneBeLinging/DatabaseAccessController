@@ -7,5 +7,5 @@ add_library(DatabaseAccessController STATIC
         DatabaseAccessController.cpp
         )
 
-target_link_directories(DatabaseAccessController PUBLIC include)
+target_include_directories(DatabaseAccessController PUBLIC include)
 target_link_libraries(DatabaseAccessController PUBLIC SQLiteCpp)
