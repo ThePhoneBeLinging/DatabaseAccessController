@@ -11,6 +11,11 @@ void DatabaseAccessController::addDatabase(const std::shared_ptr<SQLite::Databas
     databases_[key] = db;
 }
 
+std::unique_ptr<DatabaseAccessingObject> DatabaseAccessController::getDatabase(const std::string& key)
+{
+    return std::make_unique<DatabaseAccessingObject>(databases_[key], key);
+}
+
 int DatabaseAccessController::lockDatabase(const std::string& key)
 {
     mutexes_[key].lock();
