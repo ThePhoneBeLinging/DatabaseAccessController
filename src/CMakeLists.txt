@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_library(DatabaseAccessController STATIC
         DatabaseAccessController.cpp
-        )
+        DatabaseAccessingObject.cpp
+)
 
 target_link_directories(DatabaseAccessController PUBLIC include)
 target_link_libraries(DatabaseAccessController PUBLIC SQLiteCpp)
